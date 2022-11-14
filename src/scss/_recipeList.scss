@@ -1,0 +1,122 @@
+.dark {
+  background-color: $dark-body;
+}
+.mainContainer {
+  background-image: url(../img/back-watermark.png);
+  background-size: cover;
+  margin-top: 40px;
+  border-radius: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 90vh;
+}
+
+@media screen and (max-width: 577px) {
+  .mainContainer {
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+.mainContainer_dark {
+  background-color: $dark-container;
+}
+.mainContainer__logo {
+  @include dFlex-row-left;
+}
+.searchBox {
+  @include dFlex-row-center;
+  background-color: $dark-body;
+  flex-wrap: nowrap;
+  border-radius: 32px;
+  height: 46px;
+}
+.searchBox_input {
+  background-color: $dark-body;
+  border: none;
+  border-radius: 8px;
+  min-width: 80%;
+  height: 46px;
+  padding: 8px;
+  color: $dark-textColor-sec;
+
+  &:focus {
+    outline: none;
+  }
+}
+.searchBox_btn {
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+// .searchBox_image {
+// }
+.toolBar {
+  @include dFlex-row-right;
+  height: 46px;
+
+  & button {
+    padding: 10px;
+    margin: 0.5rem 4px;
+  }
+}
+
+.foodItems {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+  }
+}
+
+.foodItems_item {
+  background-color: $dark-body;
+  border-radius: 16px;
+  padding-bottom: 0.5rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+.foodItems_image {
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+.foodItems_detail {
+  color: $light-textColor-main;
+  text-align: center;
+
+  h3 {
+    font-size: 1rem;
+    margin: 8px auto;
+  }
+}
+
+.time {
+  img {
+    width: 20px;
+    height: auto;
+  }
+  span {
+    font-size: 1rem;
+  }
+
+  &-dark {
+    color: $light-textColor-main;
+  }
+
+  &-light {
+    color: $dark-textColor-sec;
+  }
+}
