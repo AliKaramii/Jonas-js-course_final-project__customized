@@ -35,3 +35,24 @@
 .generalBtn-dark {
   background-color: $dark-body;
 }
+
+.message {
+  @include dFlex-col-center;
+  padding: 100px;
+  font-size: 1.4rem;
+  color: $light-textColor-main;
+
+  & img {
+    width: 50px;
+    height: auto;
+  }
+
+  & span {
+    text-align: center;
+  }
+}
+
+.error {
+  @extend .message;
+  color: $danger;
+}

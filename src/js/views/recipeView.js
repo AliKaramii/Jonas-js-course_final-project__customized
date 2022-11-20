@@ -4,11 +4,15 @@ import minusIcon from '../../img/minus.svg';
 import bookmarkIcon from '../../img/bookmark.svg';
 import timerIlightIcon from '../../img/timer-light.svg';
 import usersIcon from '../../img/users.svg';
+import danger from '../../img/danger.svg';
+import smile from '../../img/smile-white.svg';
 import { Fraction } from 'fractional';
 
 class RecipeView {
   #parentElement = document.querySelector('.recipe');
   #data;
+  #errorMessage = 'We could not find that recipe.Please try another one!!';
+  #message = '';
 
   render(data) {
     this.#data = data;
@@ -22,11 +26,37 @@ class RecipeView {
     this.#parentElement.innerHTML = '';
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const markup = `<span class="loader"></span>`;
-    this.#parentElement.innerHTML = '';
+    this.#clear();
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
-  };
+  }
+
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+  }
+
+  renderMessage(message = this.#message) {
+    const markup = `
+    <div class="message">
+      <img src="${smile}">
+      <span>${message}</span>
+    </div>`;
+
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  renderError(message = this.#errorMessage) {
+    const markup = `
+    <div class="error">
+      <img src="${danger}">
+      <span>${message}</span>
+    </div>`;
+
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
 
   #generateMarkup() {
     return `<section class="row recipe gx-1 my-3">
