@@ -22,7 +22,6 @@ class RecipeView {
   }
 
   #clear() {
-    console.log('#parentElement : ', this.#parentElement);
     this.#parentElement.innerHTML = '';
   }
 
