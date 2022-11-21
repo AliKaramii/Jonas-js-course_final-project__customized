@@ -88,9 +88,11 @@
 .foodItems_image {
   border-radius: 16px 16px 0 0;
   overflow: hidden;
+  height: 120px;
 
   img {
     width: 100%;
+    min-height: 200px;
   }
 }
 .foodItems_detail {
