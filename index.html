@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jonas-js-course_final-project__customized</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="././src/scss/main.scss"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Jonas-js-course_final-project__customized</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" media="screen" href="././src/scss/main.scss" />
+    <script type="module" src="././src/index.js"></script>
+  </head>
 
-  <script type="module" src="././src/index.js"></script>
-</head>
+  <body class="dark">
+    <main class="container mainContainer mainContainer_dark">
+      <header class="row mainContainer__header">
+        <div class="col mainContainer__logo">
+          <img src="./src/img/logo.svg" />
+        </div>
 
-<body class="dark">
-  <main class="container mainContainer mainContainer_dark">
-    <header class="row mainContainer__header">
-      <div class="col mainContainer__logo">
-        <img src="./src/img/logo.svg" />
-      </div>
-
-      <div class="col toolBar order-md-3">
-        <button class="generalBtn generalBtn-circle generalBtn-dark">
-          <img src="./src/img/bookmark.svg" />
-        </button>
-      </div>
-      <form class="col searchBox mt-2 order-md-2">
-        <input type="text" class="searchBox_input" placeholder="search recipes" />
-        <button class="searchBox_btn">
-          <img src="./src/img/search.svg" class="searchBox_image" />
-        </button>
-      </form>
-    </header>
-    <section class="row recipe gx-1"></section>
-    <section class="row foodItems"></section>
-  </main>
-</body>
-
+        <div class="col toolBar order-md-3">
+          <button class="generalBtn generalBtn-circle generalBtn-dark">
+            <img src="./src/img/bookmark.svg" />
+          </button>
+        </div>
+        <form class="col searchBox mt-2 order-md-2">
+          <input
+            type="text"
+            class="searchBox_input"
+            placeholder="search recipes"
+          />
+          <button class="searchBox_btn">
+            <img src="./src/img/search.svg" class="searchBox_image" />
+          </button>
+        </form>
+      </header>
+      <section class="row recipe gx-1"></section>
+      <section class="row foodItems"></section>
+      <nav class="navigation">
+        <!-- <a href="#">
+        <img src="./src/img/nav-left.svg">
+        Page 2
+      </a>
+      <a href="#">
+        Page 2
+        <img src="./src/img/nav-right.svg">
+      </a> -->
+      </nav>
+    </main>
+  </body>
 </html>

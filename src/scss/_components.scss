@@ -35,7 +35,23 @@
 .generalBtn-dark {
   background-color: $dark-body;
 }
+.navigation {
+  @include dFlex-row-center;
 
+  & a {
+    @extend .generalBtn;
+    @extend .generalBtn-primary;
+    margin: 4px 8px;
+    text-align: center;
+    padding: 2px 4px;
+    width: 100px;
+    min-width: 100px;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
 .message {
   @include dFlex-col-center;
   padding: 100px;
