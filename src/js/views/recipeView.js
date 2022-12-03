@@ -16,6 +16,15 @@ class RecipeView extends View {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
+  addHandlerUpdateServings(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.generalBtn');
+      if (!btn) return;
+      const { updateTo } = btn.dataset;
+      if (+updateTo > 0) handler(+updateTo);
+    });
+  }
+
   _generateMarkup() {
     return `<section class="row recipe gx-1 my-3">
         <div class="col-md-5 recipe_title recipe_title-dark p-2">
@@ -45,10 +54,14 @@ class RecipeView extends View {
             <img src="${bookmarkIcon}" />
             </button>
             <div class="recipeDetails_servings">
-            <button class="generalBtn generalBtn-circle"><img src="${minusIcon}" /></button>
+            <button class="generalBtn generalBtn-circle" data-update-to="${
+              this._data.servings - 1
+            }"><img src="${minusIcon}" /></button>
             <img src="${usersIcon}" />
             <span>${this._data.servings} SERVINGS</span>
-            <button class="generalBtn generalBtn-circle"><img src="${plusIcon}" /></button>
+            <button class="generalBtn generalBtn-circle" data-update-to="${
+              this._data.servings + 1
+            }"><img src="${plusIcon}" /></button>
             </div>
             <h3>RECIPE INGREDIENTS</h3>
             <div class="recipeDetails_ingredients">

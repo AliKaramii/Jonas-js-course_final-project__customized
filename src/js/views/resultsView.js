@@ -11,7 +11,6 @@ class ResultsView extends View {
   }
 
   _generateMarkupPreview(results) {
-    console.log(results.id);
     return `
         <article class="col-sx-12 col-sm-4 col-md-3 mb-4">
         <div class="foodItems_item">
