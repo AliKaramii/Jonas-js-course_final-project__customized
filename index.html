@@ -15,17 +15,38 @@
     <script type="module" src="././src/index.js"></script>
   </head>
 
-  <body class="dark">
-    <main class="container mainContainer mainContainer_dark">
+  <body class="">
+    <main class="container mainContainer mainContainer">
       <header class="row mainContainer__header">
         <div class="col mainContainer__logo">
           <img src="./src/img/logo.svg" />
         </div>
-
         <div class="col toolBar order-md-3">
-          <button class="generalBtn generalBtn-circle generalBtn-dark">
-            <img src="./src/img/bookmark.svg" />
+          <button class="generalBtn generalBtn-circle generalBtn bookmarks-btn">
+            <svg>
+              <use href="./src/img/icons.svg#icon-bookmark"></use>
+            </svg>
           </button>
+          <section class="bookmarks">
+            <div class="bookmarks_item">
+              <div class="bookmarks_image">
+                <img src="./src/img/-sample-food_1.png" />
+              </div>
+              <div class="bookmarks_titles">
+                <p>Cauliflower Pizza Crust (with BBQ Chicken Pizza)</p>
+                <span>My Baking Addiction</span>
+              </div>
+            </div>
+            <div class="bookmarks_item">
+              <div class="bookmarks_image">
+                <img src="./src/img/-sample-food_1.png" />
+              </div>
+              <div class="bookmarks_titles">
+                <p>Cauliflower Pizza Crust (with BBQ Chicken Pizza)</p>
+                <span>My Baking Addiction</span>
+              </div>
+            </div>
+          </section>
         </div>
         <form class="col searchBox mt-2 order-md-2">
           <input
@@ -34,7 +55,9 @@
             placeholder="search recipes"
           />
           <button class="searchBox_btn">
-            <img src="./src/img/search.svg" class="searchBox_image" />
+            <svg>
+              <use href="./src/img/icons.svg#icon-search"></use>
+            </svg>
           </button>
         </form>
       </header>

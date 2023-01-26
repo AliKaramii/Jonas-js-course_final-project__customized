@@ -1,4 +1,4 @@
-.dark {
+body {
   background-color: $dark-body;
 }
 .mainContainer {
@@ -17,7 +17,7 @@
     border-radius: 0;
   }
 }
-.mainContainer_dark {
+.mainContainer {
   background-color: $dark-container;
 }
 .mainContainer__logo {
@@ -51,8 +51,7 @@
     cursor: pointer;
   }
 }
-// .searchBox_image {
-// }
+
 .toolBar {
   @include dFlex-row-right;
   height: 46px;
@@ -106,19 +105,13 @@
 }
 
 .time {
-  img {
+  color: $light-textColor-main;
+
+  svg {
     width: 20px;
-    height: auto;
+    height: 20px;
   }
   span {
     font-size: 1rem;
-  }
-
-  &-dark {
-    color: $light-textColor-main;
-  }
-
-  &-light {
-    color: $dark-textColor-sec;
   }
 }

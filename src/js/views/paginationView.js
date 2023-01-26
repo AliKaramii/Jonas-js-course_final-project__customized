@@ -1,6 +1,6 @@
 import View from './view.js';
-import leftArrow from '../../img/nav-left.svg';
-import rightArrow from '../../img/nav-right.svg';
+import icons from 'url:../../img/icons.svg';
+
 class PaginationView extends View {
   _parentElement = document.querySelector('.navigation');
 
@@ -25,8 +25,11 @@ class PaginationView extends View {
     if (curPage === 1 && numPages > 1) {
       return `
         <a data-goto="${curPage + 1}" class="navigation_btn" href="#">
-          <img src="${rightArrow}">
-          Page ${curPage + 1}
+        Page ${curPage + 1}
+        <svg>
+        <use href="${icons}#icon-arrow-right"></use>
+        </svg>
+      
         </a>`;
     }
 
@@ -34,8 +37,10 @@ class PaginationView extends View {
     if (curPage === numPages && numPages > 1) {
       return `
         <a data-goto="${curPage - 1}" class="navigation_btn" href="#">
-          <img src="${leftArrow}">
-          Page ${curPage - 1}
+        Page ${curPage - 1}
+        <svg>
+        <use href="${icons}#icon-arrow-left"></use>
+        </svg>
         </a>`;
     }
 
@@ -43,12 +48,16 @@ class PaginationView extends View {
     if (curPage < numPages) {
       return `
       <a data-goto="${curPage - 1}" class="navigation_btn" href="#">
-        <img src="${leftArrow}">
+      <svg>
+      <use href="${icons}#icon-arrow-left"></use>
+      </svg>
         Page ${curPage - 1}
       </a>
       <a data-goto="${curPage + 1}" class="navigation_btn" href="#">
-      <img src="${rightArrow}">
       Page ${curPage + 1}
+      <svg>
+      <use href="${icons}#icon-arrow-right"></use>
+      </svg>
       </a>`;
     }
   }

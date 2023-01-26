@@ -1,5 +1,6 @@
 import View from './view.js';
-import timerLight from '../../img/timer-light.svg';
+import icons from 'url:../../img/icons.svg';
+
 class ResultsView extends View {
   _parentElement = document.querySelector('.foodItems');
   _errorMessage = 'No recipes found for your query! Please  try again ;)';
@@ -21,7 +22,9 @@ class ResultsView extends View {
             <div class="foodItems_detail">
                 <h3>${results.title}</h3>
                 <div class="time">
-                <img loading="lazy" src="${timerLight}" />
+                <svg>
+                <use href="${icons}#icon-clock"></use>
+                </svg>
                 <span>${results.publisher}</span>
                 </div>
             </div>
